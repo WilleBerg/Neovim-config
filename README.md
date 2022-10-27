@@ -65,7 +65,9 @@ Then
 :PlugUpdate
 ```
 for good measure.
+
 8. Restart again
+
 9. Run
 ```
 :checkhealth provider
