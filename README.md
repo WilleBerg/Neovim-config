@@ -85,10 +85,11 @@ and navigate to where you want it to default when starting Neovim. Then, run:
 ```
 :Bookmark "NameOfBookmark"
 ```
-, I'll set it to "code"
+Without quotation marks!!.I set "NameOfBookmark" to "code"
 
 11. Add these to init.vim (at the bottom, don't know if order matters here):
 ```
 autocmd VimEnter * Startify
 autocmd VimEnter * NERDTree code
 ```
+where, "code" is "NameOfBookmark"
