@@ -32,6 +32,7 @@ If these fail, [go here](https://github.com/junegunn/vim-plug)
 5. Add the following to init.vim:
 ```
 set nocompatible            " disable compatibility to old-time vi
+set guifont=Inconsolata\ Nerd\ Font\ Mono:h12 " Type the name of whatever Nerd Font you download
 set showmatch               " show matching 
 set ignorecase              " case insensitive 
 set mouse=v                 " middle-click paste with 
