@@ -1,4 +1,6 @@
 # Neovim-config
+Note:
+Make sure you have Python3 and Nodejs installed.
 
 1. Open Neovim
 2. Run:
@@ -92,4 +94,4 @@ Without quotation marks!!.I set "NameOfBookmark" to "code"
 autocmd VimEnter * Startify
 autocmd VimEnter * NERDTree code
 ```
-where, "code" is "NameOfBookmark"
+where, "code" is "NameOfBookmark".
