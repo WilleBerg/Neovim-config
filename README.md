@@ -54,7 +54,39 @@ call plug#begin()
  Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 colorscheme dracula
+```
+6. Restart Neovim
+7. Execute
+```
+:PlugInstall
+```
+Then
+```
+:PlugUpdate
+```
+for good measure.
+8. Restart again
+9. Run
+```
+:checkhealth provider
+```
+and follow instructions there if errors are occuring.
+If on Windows, you probably need to follow the steps in:
+```
+:h provider-python
+```
+10. If everything seems to work, run:
+```
+:NERDTree
+```
+and navigate to where you want it to default when starting Neovim. Then, run:
+```
+:Bookmark "NameOfBookmark"
+```
+, I'll set it to "code"
+
+11. Add these to init.vim (at the bottom, don't know if order matters here):
+```
 autocmd VimEnter * Startify
 autocmd VimEnter * NERDTree code
 ```
-6. Restart Neovim
