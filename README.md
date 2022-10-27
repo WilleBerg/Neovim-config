@@ -51,6 +51,8 @@ set mouse=a                 " enable mouse click
 set clipboard=unnamedplus   " using system clipboard
 filetype plugin on
 set cursorline              " highlight current cursorline
+nnoremap <C-Left> :tabprevious<CR>
+nnoremap <C-Right> :tabnext<CR>
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 set ttyfast                 " Speed up scrolling in Vim
 call plug#begin()
@@ -103,3 +105,11 @@ autocmd VimEnter * Startify
 autocmd VimEnter * NERDTree code
 ```
 where, "code" is "NameOfBookmark".
+
+
+Keybindings: (More on windows and tabs [here](https://neovim.io/doc/user/windows.html))
+```
+T to open new tab (from NERDTree)
+Ctrl+left and Ctrl+right to change tabs
+Ctrl+Shift+W then H J K L to move windows 
+```
