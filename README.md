@@ -1,4 +1,7 @@
 # Neovim-config
+
+A readme for when I forget how to do this.
+
 Note:
 Make sure you have Python3 and Nodejs installed.
 
