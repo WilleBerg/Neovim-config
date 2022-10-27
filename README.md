@@ -2,6 +2,9 @@
 Note:
 Make sure you have Python3 and Nodejs installed.
 
+![Result](./nvim.PNG)
+
+
 1. Open Neovim
 2. Run:
 ```
