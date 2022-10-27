@@ -68,6 +68,22 @@ call plug#begin()
 call plug#end()
 colorscheme dracula
 ```
+5.2 (Optional) If you want Atom One Dark theme, replace 
+```
+colorscheme dracula
+```
+with
+```
+let g:onedark_config = {
+    \ 'style': 'darker',
+\}
+colorscheme onedark
+```
+and add the following under call plug#begin()
+```
+Plug 'navarasu/onedark.nvim'
+```
+More info on onedark [here](https://github.com/navarasu/onedark.nvim)
 6. Restart Neovim
 7. Execute
 ```
