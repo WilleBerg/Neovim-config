@@ -1,4 +1,4 @@
-# Neovim-cofig
+# Neovim-config
 
 1. Open Neovim
 2. Run:
