@@ -123,7 +123,7 @@ autocmd VimEnter * NERDTree code
 ```
 where, "code" is "NameOfBookmark".
 
-
+Information about terminal inside NVIM can be found [here](https://neovim.io/doc/user/nvim_terminal_emulator.html)
 Keybindings: (More on windows and tabs [here](https://neovim.io/doc/user/windows.html))
 ```
 T to open new tab (from NERDTree)
