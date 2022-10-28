@@ -116,7 +116,7 @@ and navigate to where you want it to default when starting Neovim. Then, run:
 ```
 :Bookmark "NameOfBookmark"
 ```
-Without quotation marks!!.I set "NameOfBookmark" to "code"
+Without quotation marks!! I set "NameOfBookmark" to "code"
 
 11. Add these to init.vim (at the bottom, don't know if order matters here):
 ```
@@ -126,6 +126,7 @@ autocmd VimEnter * NERDTree code
 where, "code" is "NameOfBookmark".
 
 Information about terminal inside NVIM can be found [here](https://neovim.io/doc/user/nvim_terminal_emulator.html)
+
 Keybindings: (More on windows and tabs [here](https://neovim.io/doc/user/windows.html))
 ```
 T to open new tab (from NERDTree)
