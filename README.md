@@ -84,7 +84,9 @@ and add the following under call plug#begin()
 Plug 'navarasu/onedark.nvim'
 ```
 More info on onedark [here](https://github.com/navarasu/onedark.nvim)
+
 6. Restart Neovim
+
 7. Execute
 ```
 :PlugInstall
