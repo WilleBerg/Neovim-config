@@ -128,5 +128,11 @@ Keybindings: (More on windows and tabs [here](https://neovim.io/doc/user/windows
 ```
 T to open new tab (from NERDTree)
 Ctrl+left and Ctrl+right to change tabs
-Ctrl+Shift+W then H J K L to move windows 
+Ctrl+w then H J K L to move windows (Capital HJKL)
+Ctrl+w then hjkl or arrow keys to switch window (move cursor)
+Ctrl+w = will increase height of current window
+Ctrl+w v will split current window vertically
+Ctrl+\+n to enter normal mode again when in :terminal(MEGA USEFUL)
+
+While in NERDTree, press m to open NERDTree menu
 ```
