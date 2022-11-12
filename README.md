@@ -22,7 +22,12 @@ Also download a [Nerd Font](https://www.nerdfonts.com/font-downloads)(for the de
 iwr -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim |`
     ni $HOME/vimfiles/autoload/plug.vim -Force
 ```
-If on Linux(Flatpak):
+If on Unix/Linux
+```
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+```
+If on Linux(Flatpak(This means you have the flatpak version of Neovim!!!!!)):
 ```
 curl -fLo ~/.var/app/io.neovim.nvim/data/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
