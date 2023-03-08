@@ -57,6 +57,11 @@ set mouse=a                 " enable mouse click
 set clipboard=unnamedplus   " using system clipboard
 filetype plugin on
 set cursorline              " highlight current cursorline
+
+" Adds tab autocomplete by rebinding Ultisnips to f5
+let g:UltiSnipsExpandTrigger = '<f5>'
+inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm() "\<C-g>u\<TAB>"
+
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
