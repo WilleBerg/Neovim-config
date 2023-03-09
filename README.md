@@ -1,5 +1,6 @@
 # Neovim-config
-
+# TODO:
+* Just upload the config file instead
 A readme for when I forget how to do this.
 
 Note:
