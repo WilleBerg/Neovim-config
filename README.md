@@ -37,6 +37,9 @@ If these fail, [go here](https://github.com/junegunn/vim-plug)
 
 5. Add the following to init.vim:
 ```
+set runtimepath^=~/.vim runtimepath+=~/.vim/after
+let g:coc_node_path = '/usr/bin/node'
+set cc=79
 set nocompatible            " disable compatibility to old-time vi
 set guifont=Inconsolata\ Nerd\ Font\ Mono:h12 " Type the name of whatever Nerd Font you download
 set showmatch               " show matching 
@@ -58,25 +61,47 @@ set clipboard=unnamedplus   " using system clipboard
 filetype plugin on
 set cursorline              " highlight current cursorline
 
-" Adds tab autocomplete by rebinding Ultisnips to f5
+" Sets tab as autocomplete trigger
 let g:UltiSnipsExpandTrigger = '<f5>'
-inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm() "\<C-g>u\<TAB>"
+inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<TAB>"
 
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+
+" Dont think this does anything currently
+"Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
+"If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
+"(see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
+if (empty($TMUX))
+  if (has("nvim"))
+    "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  endif
+  "For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
+  "Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
+  " < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
+  if (has("termguicolors"))
+    set termguicolors
+  endif
+endif
+
 set ttyfast                 " Speed up scrolling in Vim
 call plug#begin()
- Plug 'Mofiqul/dracula.nvim'
+ "Plug 'Mofiqul/dracula.nvim'
  Plug 'ryanoasis/vim-devicons'
  Plug 'SirVer/ultisnips'
  Plug 'honza/vim-snippets'
  Plug 'scrooloose/nerdtree'
  Plug 'preservim/nerdcommenter'
  Plug 'mhinz/vim-startify'
- Plug 'neoclide/coc.nvim', {'branch': 'release'}
+ Plug 'neoclide/coc.nvim', {'branch': 'release'},
+ Plug 'github/copilot.vim',
+ Plug 'morhetz/gruvbox'
 call plug#end()
-colorscheme dracula
+colorscheme gruvbox 
+" Seems not to work
+let g:gruvbox_contrast_dark = 'hard'
 ```
 5.2 (Optional) If you want Atom One Dark theme, replace 
 ```
