@@ -41,10 +41,7 @@ set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let g:coc_node_path = '/usr/bin/node'
 set cc=79
 set nocompatible            " disable compatibility to old-time vi
-
-" Just set font inside terminal
-"set guifont=Inconsolata\ Nerd\ Font\ Mono:h12  Type the name of whatever Nerd Font you download
-
+"set guifont=Fira\ Mono:h12 " Type the name of whatever Nerd Font you download
 set showmatch               " show matching 
 set ignorecase              " case insensitive 
 set mouse=v                 " middle-click paste with 
@@ -64,6 +61,8 @@ set clipboard=unnamedplus   " using system clipboard
 filetype plugin on
 set cursorline              " highlight current cursorline
 
+set t_Co=256
+
 " Sets tab as autocomplete trigger
 let g:UltiSnipsExpandTrigger = '<f5>'
 inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<TAB>"
@@ -72,7 +71,6 @@ nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 
-" Dont think this does anything currently
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
 "If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
 "(see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
@@ -101,10 +99,16 @@ call plug#begin()
  Plug 'neoclide/coc.nvim', {'branch': 'release'},
  Plug 'github/copilot.vim',
  Plug 'morhetz/gruvbox'
+ let g:gruvbox_contrast_dark = 'hard'
+ Plug 'luochen1990/rainbow'
+ let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
+ Plug 'vim-airline/vim-airline'
+ Plug 'vim-airline/vim-airline-themes'
+ let g:airline_theme='solarized'
+ let g:airline_solarized_bg='dark'
+ Plug 'tpope/vim-fugitive'
 call plug#end()
-colorscheme gruvbox 
-" Seems not to work
-let g:gruvbox_contrast_dark = 'hard'
+colorscheme gruvbox
 ```
 5.2 (Optional) If you want Atom One Dark theme, replace 
 ```
