@@ -101,6 +101,7 @@ Keybindings: (More on windows and tabs [here](https://neovim.io/doc/user/windows
 ```
 T to open new tab (from NERDTree)
 s to open file split vertical
+F2 to toggle NERDTree
 Ctrl+left and Ctrl+right to change tabs
 Ctrl+w then H J K L to move windows (Capital HJKL)
 Ctrl+w then hjkl or arrow keys to switch window (move cursor)
