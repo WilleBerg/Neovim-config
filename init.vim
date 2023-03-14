@@ -1,6 +1,15 @@
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let g:coc_node_path = '/usr/bin/node'
+
+" ==================== Word wrapping ==================== 
+" Not working?
 set cc=79
+" Indents word-wrapped lines as much as the 'parent' line
+set breakindent
+" Ensures word-wrap does not split words
+set formatoptions=l
+set lbr
+" =======================================================
 set nocompatible            " disable compatibility to old-time vi
 "set guifont=Fira\ Mono:h12 " Type the name of whatever Nerd Font you download
 set showmatch               " show matching 
@@ -21,6 +30,7 @@ set mouse=a                 " enable mouse click
 set clipboard=unnamedplus   " using system clipboard
 filetype plugin on
 set cursorline              " highlight current cursorline
+set ttyfast                 " Speed up scrolling in Vim
 
 set t_Co=256
 
@@ -56,18 +66,10 @@ endif
 
 let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
 
-"nnoremap <F2> :NERDTreeFocus<CR>
-"nnoremap <F2> :NERDTree<CR>
 " Toggle nerdtree on F2
 nnoremap <F2> :NERDTreeToggle<CR>
-"nnoremap <C-f> :NERDTreeFind<CR>
 
-" vim-airline configuration
-" let g:airline_section_c = '../%t'
-
-set ttyfast                 " Speed up scrolling in Vim
 call plug#begin()
- "Plug 'Mofiqul/dracula.nvim'
  Plug 'ryanoasis/vim-devicons'
  Plug 'SirVer/ultisnips'
  Plug 'honza/vim-snippets'
@@ -83,7 +85,8 @@ call plug#begin()
  Plug 'tpope/vim-fugitive'
  Plug 'tpope/vim-commentary'
  Plug 'MaxMEllon/vim-jsx-pretty'
- "Plug 'ntpeters/vim-better-whitespace'
+ Plug 'dense-analysis/ale'
+ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
 
 colorscheme gruvbox
@@ -93,13 +96,3 @@ let g:airline_theme = 'base16_gruvbox_dark_hard'
 " Start NERDTree and put the cursor back in the other window.
 autocmd VimEnter * NERDTree | wincmd p
 autocmd VimEnter * source ~/.config/nvim/init.vim
-
-
-
-
-
-
-
-
-
-

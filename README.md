@@ -97,6 +97,10 @@ where, "code" is "NameOfBookmark".
 
 Information about terminal inside NVIM can be found [here](https://neovim.io/doc/user/nvim_terminal_emulator.html)
 
+Nvim treesitter needs to install every language seperatly, do this with
+```
+:TSInstall <name of code language>
+```
 Keybindings: (More on windows and tabs [here](https://neovim.io/doc/user/windows.html))
 ```
 T to open new tab (from NERDTree)
