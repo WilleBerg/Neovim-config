@@ -22,9 +22,9 @@ set softtabstop=4           " see multiple spaces as tabstops so <BS> does the r
 set expandtab               " converts tabs to white space
 set shiftwidth=4            " width for autoindents
 set autoindent              " indent a new line the same amount as the line just typed
-set relativenumber                  " add line numbers
+set relativenumber          " add line numbers
 set wildmode=longest,list   " get bash-like tab completions
-filetype plugin indent on   "allow auto-indenting depending on file type
+filetype plugin indent on   " allow auto-indenting depending on file type
 syntax on                   " syntax highlighting
 set mouse=a                 " enable mouse click
 set clipboard=unnamedplus   " using system clipboard
@@ -36,17 +36,29 @@ set t_Co=256
 
 " Sets tab as autocomplete trigger
 let g:UltiSnipsExpandTrigger = '<f5>'
-inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<TAB>"
 
+" ================= Key bindings and stuff ==============
+inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<TAB>"
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
-
 " Stop highlighting after clicking esc
 " SPACES MATTER HERE
 nnoremap <silent><esc> :noh <cr><esc>
-
-
+" Toggle nerdtree on F2
+nnoremap <F2> :NERDTreeToggle<CR>
+" Fix window height (to max)
+nnoremap <F7> <C-w>_
+" Toggle Startify
+nnoremap <F8> :Startify <CR>
+" Change window width
+nnoremap <F3> <C-w><
+nnoremap <F4> <C-w>>
+nnoremap <F27> <C-w>5<
+nnoremap <F28> <C-w>5>
+nnoremap <F26> :source ~/.config/nvim/init.vim <CR>
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+" =======================================================
 
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
 "If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
@@ -64,11 +76,6 @@ if (empty($TMUX))
   endif
 endif
 
-let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
-
-" Toggle nerdtree on F2
-nnoremap <F2> :NERDTreeToggle<CR>
-
 call plug#begin()
  Plug 'ryanoasis/vim-devicons'
  Plug 'SirVer/ultisnips'
@@ -84,15 +91,40 @@ call plug#begin()
  Plug 'vim-airline/vim-airline-themes'
  Plug 'tpope/vim-fugitive'
  Plug 'tpope/vim-commentary'
+ Plug 'tpope/vim-surround'
  Plug 'MaxMEllon/vim-jsx-pretty'
+ Plug 'othree/yajs.vim'
  Plug 'dense-analysis/ale'
  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+ Plug 'nvim-lua/plenary.nvim'
+ Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
+ " Themes
+ "Plug 'ellisonleao/gruvbox.nvim'
+ Plug 'nordtheme/vim'
+ Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+ Plug 'jiangmiao/auto-pairs'
+ "Plug 'dracula/vim'
 call plug#end()
 
-colorscheme gruvbox
-let g:gruvbox_contrast_dark = 'hard'
-let g:airline_theme = 'base16_gruvbox_dark_hard'
+colorscheme tokyonight-night
+let g:airline_theme = 'deus'
+
+
+"let g:ale_linters = {
+"\   'python': ['flake8', 'pylint'],
+"\   'javascript': ['eslint'],
+"\   'vue': ['eslint']
+"\}
+
+" set background=dark
+" colorscheme gruvbox
+" let g:gruvbox_contrast_dark = 'hard'
+" let g:airline_theme = 'base16_gruvbox_dark_hard'
 
 " Start NERDTree and put the cursor back in the other window.
 autocmd VimEnter * NERDTree | wincmd p
 autocmd VimEnter * source ~/.config/nvim/init.vim
+autocmd InsertEnter * set number
+autocmd InsertLeave * set relativenumber
+
+let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
