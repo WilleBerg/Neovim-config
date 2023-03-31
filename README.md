@@ -6,9 +6,7 @@ Note:
 Make sure you have Python3 and Nodejs installed.
 Also download a [Nerd Font](https://www.nerdfonts.com/font-downloads)(for the devicons to work). I chose Inconsolata.
 
-# TODO: Change this picture
-
-![Result](./nvim1.PNG)
+![Result](./gifs/forneovim.gif)
 
 
 1. Open Neovim
