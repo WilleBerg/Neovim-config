@@ -101,6 +101,9 @@ Nvim treesitter needs to install every language seperatly, do this with
 ```
 :TSInstall <name of code language>
 ```
+
+Use ```:checkhealth``` to see if you need a clipboard provider. (like xclip)
+
 Keybindings: (More on windows and tabs [here](https://neovim.io/doc/user/windows.html))
 ```
 T to open new tab (from NERDTree)
