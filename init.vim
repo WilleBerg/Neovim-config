@@ -75,6 +75,7 @@ if (empty($TMUX))
   endif
 endif
 
+
 call plug#begin()
  Plug 'SirVer/ultisnips'
  Plug 'honza/vim-snippets'
@@ -84,7 +85,7 @@ call plug#begin()
  Plug 'neoclide/coc.nvim', {'branch': 'release'},
  Plug 'github/copilot.vim',
  Plug 'morhetz/gruvbox'
- Plug 'luochen1990/rainbow'
+ " Plug 'luochen1990/rainbow'
  Plug 'vim-airline/vim-airline'
  Plug 'vim-airline/vim-airline-themes'
  Plug 'tpope/vim-fugitive'
@@ -93,7 +94,7 @@ call plug#begin()
  Plug 'MaxMEllon/vim-jsx-pretty'
  Plug 'othree/yajs.vim'
  Plug 'dense-analysis/ale'
- " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
  Plug 'nvim-lua/plenary.nvim'
  Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
  " Themes
@@ -101,6 +102,7 @@ call plug#begin()
  Plug 'nordtheme/vim'
  Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
  Plug 'jiangmiao/auto-pairs'
+ Plug 'HiPhish/nvim-ts-rainbow2'
  "Plug 'dracula/vim'
 
   Plug 'ryanoasis/vim-devicons'
@@ -113,6 +115,31 @@ let g:airline_theme = 'deus'
 " colorscheme gruvbox
 " let g:gruvbox_contrast_dark = 'hard'
 " let g:airline_theme = 'base16_gruvbox_dark_hard'
+
+lua << .
+require'nvim-treesitter.configs'.setup {
+    highlight = {
+        enable = true
+    },
+  rainbow = {
+    enable = true,
+    -- list of languages you want to disable the plugin for
+    -- Which query to use for finding delimiters
+    query = 'rainbow-parens',
+    -- Highlight the entire buffer all at once
+    strategy = require('ts-rainbow').strategy.global,
+    hlgroups = {
+        'TSRainbowBlue',
+        'TSRainbowGreen',
+        'TSRainbowRed',
+        'TSRainbowPurple',
+        'TSRainbowOrange',
+        'TSRainbowCyan',
+        'TSRainbowYellow'
+        }
+  }
+}
+.
 
 " Start NERDTree and put the cursor back in the other window.
 autocmd VimEnter * NERDTree | wincmd p
